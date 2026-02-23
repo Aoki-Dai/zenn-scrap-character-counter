@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Zenn Scrap Character Counter",
+  "version": "1.0.0",
+  "description": "Zennのスクラップページの文字数をカウントします",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "文字数カウント"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://zenn.dev/*/scraps/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
+}
