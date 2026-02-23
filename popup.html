@@ -1,70 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>文字数カウント</title>
-  <style>
-    body {
-      width: 300px;
-      padding: 16px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 14px;
-      color: #1a1a1a;
-    }
-    h1 {
-      font-size: 16px;
-      margin: 0 0 12px;
-      color: #3ea8ff;
-    }
-    .stat {
-      display: flex;
-      justify-content: space-between;
-      padding: 6px 0;
-      border-bottom: 1px solid #e8e8e8;
-    }
-    .stat:last-child {
-      border-bottom: none;
-    }
-    .stat-label {
-      color: #555;
-    }
-    .stat-value {
-      font-weight: bold;
-    }
-    #status {
-      margin-top: 12px;
-      font-size: 12px;
-      color: #999;
-    }
-    #error {
-      margin-top: 12px;
-      font-size: 12px;
-      color: #e53e3e;
-    }
-  </style>
-</head>
-<body>
-  <h1>Zenn Scrap 文字数</h1>
-  <div class="stat">
-    <span class="stat-label">総文字数</span>
-    <span class="stat-value" id="total">-</span>
-  </div>
-  <div class="stat">
-    <span class="stat-label">日本語文字数</span>
-    <span class="stat-value" id="japanese">-</span>
-  </div>
-  <div class="stat">
-    <span class="stat-label">空白除外文字数</span>
-    <span class="stat-value" id="noSpace">-</span>
-  </div>
-  <div class="stat">
-    <span class="stat-label">投稿数</span>
-    <span class="stat-value" id="postCount">-</span>
-  </div>
-  <div id="status">読み込み中...</div>
-  <div id="error"></div>
+    <head>
+        <meta charset="UTF-8" />
+        <title>文字数カウント</title>
+        <style>
+            body {
+                width: 300px;
+                padding: 16px;
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 14px;
+                color: #1a1a1a;
+            }
+            h1 {
+                font-size: 16px;
+                margin: 0 0 12px;
+                color: #3ea8ff;
+            }
+            .stat {
+                display: flex;
+                justify-content: space-between;
+                padding: 6px 0;
+                border-bottom: 1px solid #e8e8e8;
+            }
+            .stat:last-child {
+                border-bottom: none;
+            }
+            .stat-label {
+                color: #555;
+            }
+            .stat-value {
+                font-weight: bold;
+            }
+            #status {
+                margin-top: 12px;
+                font-size: 12px;
+                color: #999;
+            }
+            #error {
+                margin-top: 12px;
+                font-size: 12px;
+                color: #e53e3e;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Zenn Scrap 文字数カウント</h1>
+        <div class="stat">
+            <span class="stat-label">総文字数</span>
+            <span class="stat-value" id="total">-</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">日本語文字数</span>
+            <span class="stat-value" id="japanese">-</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">空白除外文字数</span>
+            <span class="stat-value" id="noSpace">-</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">投稿数</span>
+            <span class="stat-value" id="postCount">-</span>
+        </div>
+        <div id="status">読み込み中...</div>
+        <div id="error"></div>
 
-  <script src="wasm_exec.js"></script>
-  <script src="popup.js"></script>
-</body>
+        <script src="wasm_exec.js"></script>
+        <script src="popup.js"></script>
+    </body>
 </html>
