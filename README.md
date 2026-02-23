@@ -1,7 +1,6 @@
 # Zenn Scrap Character Counter
 
-Zenn のスクラップページの文字数をカウントする Chrome 拡張機能です。
-Go を WebAssembly にコンパイルし、日本語文字を集計します。
+Zenn のスクラップの文字数をカウントする Chrome 拡張機能です。  GoをWebAssemblyにコンパイルし、日本語文字を集計します。
 
 ![スクリーンショット](screenshot.png "スクリーンショット")
 
