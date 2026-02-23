@@ -3,10 +3,12 @@
 Zenn のスクラップページの文字数をカウントする Chrome 拡張機能です。
 Go を WebAssembly にコンパイルし、日本語文字を集計します。
 
+![スクリーンショット](screenshot.png "スクリーンショット")
+
 ## 機能
 
 | 項目 | 内容 |
-|---|---|
+| --- | --- |
 | 総文字数 | スクラップ全投稿の Unicode 文字単位の文字数 |
 | 日本語文字数 | ひらがな・カタカナ・漢字の合計 |
 | 空白除外文字数 | 空白・改行を除いた文字数 |
@@ -14,7 +16,7 @@ Go を WebAssembly にコンパイルし、日本語文字を集計します。
 
 ## ディレクトリ構成
 
-```
+```txt
 zenn-scrap-character-counter/
 ├── go/
 │   ├── go.mod       # Go モジュール定義
@@ -26,7 +28,7 @@ zenn-scrap-character-counter/
 └── build.sh         # Go を Wasm にコンパイルするビルドスクリプト
 ```
 
-> `main.wasm` と `wasm_exec.js` は `build.sh` で生成されるため Git 管理外です。
+`main.wasm` と `wasm_exec.js` は `build.sh` で生成されるため Git 管理外
 
 ## 必要な環境
 
