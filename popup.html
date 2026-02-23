@@ -42,6 +42,18 @@
                 font-size: 12px;
                 color: #e53e3e;
             }
+            #github-link {
+                margin-top: 12px;
+                font-size: 11px;
+                text-align: right;
+            }
+            #github-link a {
+                color: #999;
+                text-decoration: none;
+            }
+            #github-link a:hover {
+                color: #3ea8ff;
+            }
         </style>
     </head>
     <body>
@@ -64,6 +76,9 @@
         </div>
         <div id="status">読み込み中...</div>
         <div id="error"></div>
+        <div id="github-link">
+            <a href="https://github.com/Aoki-Dai/zenn-scrap-character-counter" target="_blank">GitHub</a>
+        </div>
 
         <script src="wasm_exec.js"></script>
         <script src="popup.js"></script>
