@@ -11,7 +11,7 @@
 function collectScrapText() {
   // Zennのスクラップ投稿コンテンツの候補セレクタ（優先順）
   const selectors = [
-    ".ScrapComment_body__text__vTfV1",  // ハッシュ付きクラス（バージョン依存）
+    ".ScrapComment_body__text__vTfV1", // ハッシュ付きクラス（バージョン依存）
     "[class*='ScrapComment_body']",
     "[class*='scrap-comment'] p",
     "article p",

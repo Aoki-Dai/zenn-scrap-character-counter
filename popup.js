@@ -26,8 +26,10 @@ function setError(msg) {
 
 function displayResults(stats, postCount) {
   document.getElementById("total").textContent = stats.total.toLocaleString();
-  document.getElementById("japanese").textContent = stats.japanese.toLocaleString();
-  document.getElementById("noSpace").textContent = stats.noSpace.toLocaleString();
+  document.getElementById("japanese").textContent =
+    stats.japanese.toLocaleString();
+  document.getElementById("noSpace").textContent =
+    stats.noSpace.toLocaleString();
   document.getElementById("postCount").textContent = postCount.toLocaleString();
   setStatus("");
 }
@@ -40,9 +42,16 @@ async function main() {
     setStatus("ページのテキストを取得中...");
 
     // アクティブなタブにメッセージを送信してテキストを取得
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    const [tab] = await chrome.tabs.query({
+      active: true,
+      currentWindow: true,
+    });
 
-    if (!tab || !tab.url || !tab.url.match(/^https:\/\/zenn\.dev\/[^/]+\/scraps\//)) {
+    if (
+      !tab ||
+      !tab.url ||
+      !tab.url.match(/^https:\/\/zenn\.dev\/[^/]+\/scraps\//)
+    ) {
       setError("Zenn のスクラップページを開いてください。");
       return;
     }
@@ -51,7 +60,9 @@ async function main() {
     try {
       response = await chrome.tabs.sendMessage(tab.id, { action: "getText" });
     } catch (e) {
-      setError("ページと通信できませんでした。リロードして再試行してください。");
+      setError(
+        "ページと通信できませんでした。リロードして再試行してください。",
+      );
       return;
     }
 
