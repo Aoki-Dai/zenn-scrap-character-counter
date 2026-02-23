@@ -37,10 +37,10 @@ func analyzeText(text string) map[string]int {
 	}
 }
 
-// jsAnalyzeText is the JS↔Go bridge wrapper registered as a global function.
-func jsAnalyzeText(this js.Value, args []js.Value) interface{} {
+// jsAnalyzeText は、グローバル関数として登録された JS ↔ Go 間のブリッジ用ラッパー
+func jsAnalyzeText(this js.Value, args []js.Value) any {
 	if len(args) < 1 {
-		return js.ValueOf(map[string]interface{}{
+		return js.ValueOf(map[string]any{
 			"total":    0,
 			"japanese": 0,
 			"noSpace":  0,
@@ -49,7 +49,7 @@ func jsAnalyzeText(this js.Value, args []js.Value) interface{} {
 	text := args[0].String()
 	result := analyzeText(text)
 
-	return js.ValueOf(map[string]interface{}{
+	return js.ValueOf(map[string]any{
 		"total":    result["total"],
 		"japanese": result["japanese"],
 		"noSpace":  result["noSpace"],
@@ -59,10 +59,9 @@ func jsAnalyzeText(this js.Value, args []js.Value) interface{} {
 func main() {
 	done := make(chan struct{})
 
-	// Register the Go function as a JavaScript global.
+	// Goの関数をJavaScriptのグローバル関数として登録
 	js.Global().Set("analyzeText", js.FuncOf(jsAnalyzeText))
 
-	// Keep the Wasm module alive until the channel receives a value.
+	// チャネルが値を受信するまで、Wasmモジュールを維持
 	<-done
 }
-
