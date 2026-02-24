@@ -24,6 +24,19 @@ function setError(msg) {
   setStatus("");
 }
 
+function displaySelectionResults(selectedText) {
+  const section = document.getElementById("selection-section");
+  if (selectedText === "") {
+    section.style.display = "none";
+  } else {
+    const stats = analyzeText(selectedText); // eslint-disable-line no-undef
+    document.getElementById("sel-total").textContent = stats.total.toLocaleString();
+    document.getElementById("sel-japanese").textContent = stats.japanese.toLocaleString();
+    document.getElementById("sel-noSpace").textContent = stats.noSpace.toLocaleString();
+    section.style.display = "block";
+  }
+}
+
 function displayResults(stats, postCount) {
   document.getElementById("total").textContent = stats.total.toLocaleString();
   document.getElementById("japanese").textContent =
@@ -76,6 +89,7 @@ async function main() {
     // Go Wasm の analyzeText をグローバルから呼び出す
     const stats = analyzeText(response.text); // eslint-disable-line no-undef
     displayResults(stats, response.postCount || 0);
+    displaySelectionResults(response.selectedText || "");
   } catch (err) {
     setError(`エラー: ${err.message}`);
   }

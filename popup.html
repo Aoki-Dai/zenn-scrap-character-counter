@@ -42,6 +42,16 @@
                 font-size: 12px;
                 color: #e53e3e;
             }
+            #selection-section {
+                display: none;
+                margin-top: 12px;
+                padding-top: 8px;
+            }
+            #selection-section h2 {
+                font-size: 13px;
+                margin: 0 0 6px;
+                color: #3ea8ff;
+            }
             #github-link {
                 margin-top: 12px;
                 font-size: 11px;
@@ -73,6 +83,21 @@
         <div class="stat">
             <span class="stat-label">投稿数</span>
             <span class="stat-value" id="postCount">-</span>
+        </div>
+        <div id="selection-section">
+            <h2>選択テキスト</h2>
+            <div class="stat">
+                <span class="stat-label">総文字数</span>
+                <span class="stat-value" id="sel-total">-</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">日本語文字数</span>
+                <span class="stat-value" id="sel-japanese">-</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">空白除外文字数</span>
+                <span class="stat-value" id="sel-noSpace">-</span>
+            </div>
         </div>
         <div id="status">読み込み中...</div>
         <div id="error"></div>

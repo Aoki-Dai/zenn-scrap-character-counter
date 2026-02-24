@@ -43,6 +43,7 @@ function collectScrapText() {
 chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   if (message.action === "getText") {
     const result = collectScrapText();
+    result.selectedText = window.getSelection().toString();
     sendResponse(result);
   }
   // sendResponse を非同期で呼ぶ場合は true を返す必要があるが、
