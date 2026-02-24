@@ -3,7 +3,7 @@
   "name": "Zenn Scrap Character Counter",
   "version": "1.0.0",
   "description": "Zennのスクラップページの文字数をカウントします",
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab"],
   "action": {
     "default_popup": "popup.html",
     "default_title": "文字数カウント"
